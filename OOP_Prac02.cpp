@@ -121,7 +121,7 @@ int main()
             }
             break;
         case 3:
-            int f_div;
+            char f_div;
             cout << "\nEnter division of faculty: ";
             cin >> f_div;
             for (int i = 0; i < count; i++)
