@@ -25,7 +25,6 @@ public:
     {
         cout << "\n\t Enter Student Information ";
         cout << "\nEnter your name: ";
-        cin.ignore();
         getline(cin, name);
         cout << "\nEnter Roll_no: ";
         cin >> *roll_no;
