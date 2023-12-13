@@ -1,89 +1,84 @@
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
+
 int main()
 {
-    int age;
-    double income;
-    char city[15];
-    int car;
-    cout << " " << endl;
-    cout << "Enter The Age:";
+    int age, income;
+    string city, vehicle;
+
+    cout << "Enter Your age : " << endl;
     cin >> age;
-    cout << "Enter The Income:";
+    cout << "Enter Your income : " << endl;
     cin >> income;
-    cout << "Enter The City:";
+    cout << "Enter Your city : " << endl;
     cin >> city;
-    cout << "Enter The Car :";
-    cin >> car;
-    cout << " " << endl;
+    cout << "Enter Your vehicle : " << endl;
+    cin >> vehicle;
+
     try
     {
-        if (age < 18 || age > 55)
+        if (age >= 18 && age <= 55)
+        {
+            cout << "Your age is : " << age << endl;
+        }
+        else
         {
             throw age;
         }
-        else
-        {
-            cout << "Your Age Is:" << age << endl;
-        }
     }
     catch (int)
     {
-        cout << "Invalid Input" << endl;
-        cout << "NOTE: "
-             << "You have Enter Invalid Age" << endl;
+        cout << "Your age is not accepted" << endl;
     }
+
     try
     {
-        if (income < 50000 || income > 1000000)
+        if (income >= 50000 && income <= 100000)
+        {
+            cout << "Your Income is : " << income << endl;
+        }
+        else
         {
             throw income;
         }
-        else
-        {
-            cout << "Your income Is:" << income << endl;
-        }
-    }
-    catch (double)
-    {
-        cout << "Invalid Input" << endl;
-        cout << "NOTE: "
-             << "You have Enter Invalid income" << endl;
-    }
-    try
-    {
-        if (car != 2 && car != 4)
-        {
-            throw car;
-        }
-        else
-        {
-            cout << "Your are using a " << car << " wheeler car " << endl;
-        }
     }
     catch (int)
     {
-        cout << "Invalid Input" << endl;
-        cout << "NOTE:"
-             << "You have Enter Invalid car" << endl;
+        cout << "Your Income is not acceptable " << endl;
     }
+
     try
     {
-        if (strcmp(city, "Pune") && strcmp(city, "Mumbai") && strcmp(city, "Banglore") && strcmp(city, "Chennai"))
+        if (city == "pune" || city == "mumbai" || city == "banglore" || city == "chennai")
         {
-            throw city;
+            cout << "You Live in : " << city << endl;
         }
         else
         {
-            cout << "Your city Is:" << city << endl;
+            throw city;
         }
     }
-    catch (char[])
+    catch (string)
     {
-        cout << "Invalid Input" << endl;
-        cout << "NOTE:"
-             << "You have Enter Invalid city" << endl;
+        cout << "Your city is not accepted" << endl;
     }
+
+    try
+    {
+        if (vehicle == "4wheeler")
+        {
+            cout << "Nice" << endl;
+        }
+        else
+        {
+            throw vehicle;
+        }
+    }
+    catch (string)
+    {
+        cout << "Your vehicle is not accepted" << endl;
+    }
+
     return 0;
 }
