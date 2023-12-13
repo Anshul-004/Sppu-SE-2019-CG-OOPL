@@ -35,7 +35,7 @@ bool compare(const Item &i1, const Item &i2)
 int main()
 {
     int ch;
-    while (ch !=7)
+    while (ch != 6)
     {
         cout << "*** Menu ***" << endl;
         cout << "1.Insert the Item Name:" << endl;
@@ -67,6 +67,9 @@ int main()
             break;
         case 6:
             exit(0);
+        default:
+            cout<<"Invalid Choice"<<endl;
+
         }
     } 
     return 0;
