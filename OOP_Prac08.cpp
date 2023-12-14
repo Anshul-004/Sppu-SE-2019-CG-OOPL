@@ -1,37 +1,35 @@
-#include <iostream>
-#include <map>
-#include <string>
+#include<iostream>
+#include<map>
+#include<string>
 using namespace std;
+
 int main()
 {
-    typedef map<string, int> mapType;
-    mapType populationMap;
-    
-//different ways of mapping
-    populationMap.insert(pair<string, int>("China", 1339));
-    populationMap.insert(pair<string, int>("India", 1187));
-    populationMap.insert(mapType::value_type("US", 310));
-    populationMap.insert(mapType::value_type("Indonesia", 234));
-    populationMap.insert(make_pair("Brazil", 193));
-    populationMap.insert(make_pair("Pakistan", 170));
+    bool flag = false;
+    string ch;
+    map<string,int> pop;
+    pop["INDIA"] = 64966;
+    pop["JAPAN"] = 23429;
+    pop["USA"] = 34291;
+    pop["BRAZIL"] = 27142;
 
-    mapType::iterator iter = --populationMap.end();
-    populationMap.erase(iter);
-   
-    cout << "Size of populationMap: " << populationMap.size() << '\n';
-    for (iter = populationMap.begin(); iter != populationMap.end(); ++iter)
+    map<string,int> ::iterator itr;
+    
+    cout<<"What do want to search for "<<endl;
+    cin>>ch;
+    
+    for (itr=pop.begin(); itr != pop.end(); itr++)
     {
-        cout << iter->first << ": "
-             << iter->second << " million\n";
+        if ((*itr).first == ch)
+        {
+            cout<<(*itr).first<<" Has Population of "<<(*itr).second<<endl;
+            flag = true;
+        }            
     }
-
-    string country("Indonesia");
-    iter = populationMap.find(country);
-    if (iter != populationMap.end())
-        cout << country << "s populations is "
-             << iter->second << " million\n";
-    else
-        cout << "Key is not in populationMap" << '\n';
+    if (flag !=true)
+    {
+        cout<<"NOT FOUND"<<endl;
+    }
     
-    populationMap.clear();
+    return 0;
 }
